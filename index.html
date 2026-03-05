@@ -5,34 +5,147 @@
 
 <title>DOPESTCLASS</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
 body{
-background:#FFD41D;
-color:white;
+margin:0;
 font-family:Arial;
+background:#050505;
+color:white;
 text-align:center;
-padding:40px;
+}
+
+/* HEADER */
+
+header{
+padding:60px 20px;
+background:linear-gradient(90deg,#ff004c,#ff7b00,#ff004c);
+background-size:400%;
+animation:glow 8s infinite;
+}
+
+@keyframes glow{
+0%{background-position:0%}
+50%{background-position:100%}
+100%{background-position:0%}
+}
+
+header h1{
+font-size:42px;
+margin:0;
+letter-spacing:3px;
+}
+
+/* NAV */
+
+nav{
+background:#111;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ff004c;
+}
+
+/* SECTION */
+
+section{
+padding:60px 20px;
+}
+
+/* BEATS */
+
+.beat-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
 
 .beat{
-background:#FFA240;
+background:#111;
 padding:20px;
-margin:20px auto;
+border-radius:12px;
 width:300px;
-border-radius:10px;
+box-shadow:0px 0px 20px rgba(255,0,80,0.4);
+transition:0.3s;
+}
+
+.beat:hover{
+transform:scale(1.05);
+box-shadow:0px 0px 40px rgba(255,0,80,0.9);
+}
+
+audio{
+width:100%;
+margin-top:10px;
 }
 
 button{
-background:#FF4646;
+margin-top:10px;
+background:#ff004c;
 border:none;
-padding:10px;
+padding:12px 18px;
 color:white;
+font-weight:bold;
 cursor:pointer;
+border-radius:6px;
 }
 
 button:hover{
-background:red;
+background:#ff7b00;
+}
+
+/* VIDEO */
+
+.video-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+/* ABOUT */
+
+.about{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+}
+
+/* SOCIAL */
+
+.social{
+margin-top:30px;
+}
+
+.social a{
+margin:0 10px;
+font-size:20px;
+color:white;
+text-decoration:none;
+}
+
+.social a:hover{
+color:#ff004c;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+padding:30px;
+margin-top:40px;
 }
 
 </style>
@@ -41,11 +154,30 @@ background:red;
 
 <body>
 
-<h1>DOPESTCLASS</h1>
+<header>
+
+<h1>THE DOPEST DROPS FOR THE MUSIC CRAFTED BY COLBYDEDON</h1>
+
+</header>
+
+<nav>
+
+<a href="#beats">Beats</a>
+<a href="#videos">Videos</a>
+<a href="#about">About</a>
+<a href="#social">Social</a>
+
+</nav>
+
+<section id="beats">
+
+<h2>🔥 Latest Drops</h2>
+
+<div class="beat-grid">
 
 <div class="beat">
 
-<h2>VEGAS</h2>
+<h3>VEGAS</h3>
 
 <audio controls>
 <source src="VEGAS-90-Cm.mp3">
@@ -57,10 +189,9 @@ background:red;
 
 </div>
 
-
 <div class="beat">
 
-<h2>Drill Beat</h2>
+<h3>Drill Beat</h3>
 
 <audio controls>
 <source src="beats/drill1.mp3">
@@ -72,10 +203,80 @@ background:red;
 
 </div>
 
+</div>
+
+</section>
+
+<section id="videos">
+
+<h2>🎬 Videos</h2>
+
+<div class="video-container">
+
+<iframe width="360" height="215"
+src="https://www.youtube.com/embed/YOURVIDEOID"
+frameborder="0"
+allowfullscreen></iframe>
+
+<iframe width="360" height="215"
+src="https://www.youtube.com/embed/YOURVIDEOID"
+frameborder="0"
+allowfullscreen></iframe>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>👤 About The Artist</h2>
+
+<div class="about">
+
+<p>
+Colby Dedon is the creator behind <strong>Dopest Class</strong>, crafting
+high energy, modern production designed for artists who want records that hit
+hard and stand out.
+</p>
+
+<p>
+From dark trap to melodic drill and cinematic soundscapes,
+Dopest Class delivers powerful beats built for real artists and real records.
+</p>
+
+<p>
+Every beat is produced, mixed, and designed with precision to give artists
+the sound they need to create their next hit.
+</p>
+
+</div>
+
+</section>
+
+<section id="social">
+
+<h2>🌐 Connect</h2>
+
+<div class="social">
+
+<a href="https://instagram.com/YOURNAME">Instagram</a>
+
+<a href="https://youtube.com/YOURCHANNEL">YouTube</a>
+
+<a href="https://twitter.com/YOURNAME">Twitter</a>
+
+<a href="mailto:youremail@email.com">Email</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Dopest Class | Produced by Colby Dedon</p>
+
+</footer>
+
 </body>
 
-
 </html>
-
-
-
