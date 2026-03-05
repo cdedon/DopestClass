@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
-<title>DOPESTCLASS</title>
+<title>DOPEST CLASS | Colby Dedon</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,28 +13,24 @@ margin:0;
 font-family:Arial;
 background:#050505;
 color:white;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(90deg,#ff004c,#ff7b00,#ff004c);
+padding:90px 20px;
 text-align:center;
 }
 
-/* HEADER */
-
-header{
-padding:60px 20px;
-background:linear-gradient(90deg,#ff004c,#ff7b00,#ff004c);
-background-size:400%;
-animation:glow 8s infinite;
+.hero h1{
+font-size:44px;
+letter-spacing:2px;
 }
 
-@keyframes glow{
-0%{background-position:0%}
-50%{background-position:100%}
-100%{background-position:0%}
-}
-
-header h1{
-font-size:42px;
-margin:0;
-letter-spacing:3px;
+.hero p{
+font-size:18px;
+opacity:.9;
 }
 
 /* NAV */
@@ -43,11 +38,12 @@ letter-spacing:3px;
 nav{
 background:#111;
 padding:15px;
+text-align:center;
 }
 
 nav a{
 color:white;
-margin:0 15px;
+margin:0 20px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -59,12 +55,13 @@ color:#ff004c;
 /* SECTION */
 
 section{
-padding:60px 20px;
+padding:70px 20px;
+text-align:center;
 }
 
-/* BEATS */
+/* BEAT GRID */
 
-.beat-grid{
+.beats{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
@@ -74,15 +71,15 @@ gap:30px;
 .beat{
 background:#111;
 padding:20px;
-border-radius:12px;
+border-radius:10px;
 width:300px;
-box-shadow:0px 0px 20px rgba(255,0,80,0.4);
-transition:0.3s;
+box-shadow:0 0 20px rgba(255,0,90,.4);
+transition:.3s;
 }
 
 .beat:hover{
 transform:scale(1.05);
-box-shadow:0px 0px 40px rgba(255,0,80,0.9);
+box-shadow:0 0 40px rgba(255,0,90,.8);
 }
 
 audio{
@@ -94,20 +91,40 @@ button{
 margin-top:10px;
 background:#ff004c;
 border:none;
-padding:12px 18px;
+padding:12px 20px;
 color:white;
 font-weight:bold;
-cursor:pointer;
 border-radius:6px;
+cursor:pointer;
 }
 
 button:hover{
 background:#ff7b00;
 }
 
+/* LICENSES */
+
+.licenses{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.license{
+background:#111;
+padding:25px;
+border-radius:10px;
+width:250px;
+}
+
+.license h3{
+color:#ff004c;
+}
+
 /* VIDEO */
 
-.video-container{
+.videos{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
@@ -119,20 +136,16 @@ gap:30px;
 .about{
 max-width:700px;
 margin:auto;
+line-height:1.7;
 font-size:18px;
-line-height:1.6;
 }
 
 /* SOCIAL */
 
-.social{
-margin-top:30px;
-}
-
 .social a{
-margin:0 10px;
-font-size:20px;
+margin:0 12px;
 color:white;
+font-size:20px;
 text-decoration:none;
 }
 
@@ -146,6 +159,7 @@ footer{
 background:#111;
 padding:30px;
 margin-top:40px;
+text-align:center;
 }
 
 </style>
@@ -154,26 +168,29 @@ margin-top:40px;
 
 <body>
 
-<header>
+<div class="hero">
 
-<h1>THE DOPEST DROPS FOR THE MUSIC CRAFTED BY COLBYDEDON</h1>
+<h1>THE DOPEST DROPS FOR THE MUSIC CRAFTED BY COLBY DEDON</h1>
 
-</header>
+<p>Dopest Class Production</p>
+
+</div>
 
 <nav>
 
 <a href="#beats">Beats</a>
+<a href="#licenses">Licenses</a>
 <a href="#videos">Videos</a>
 <a href="#about">About</a>
-<a href="#social">Social</a>
+<a href="#contact">Contact</a>
 
 </nav>
 
 <section id="beats">
 
-<h2>🔥 Latest Drops</h2>
+<h2>🔥 Beat Store</h2>
 
-<div class="beat-grid">
+<div class="beats">
 
 <div class="beat">
 
@@ -207,11 +224,45 @@ margin-top:40px;
 
 </section>
 
+<section id="licenses">
+
+<h2>💰 License Options</h2>
+
+<div class="licenses">
+
+<div class="license">
+<h3>Basic</h3>
+<p>$29</p>
+<p>MP3 File</p>
+<p>50k Streams</p>
+<p>1 Music Video</p>
+</div>
+
+<div class="license">
+<h3>WAV</h3>
+<p>$59</p>
+<p>MP3 + WAV</p>
+<p>150k Streams</p>
+<p>Commercial Use</p>
+</div>
+
+<div class="license">
+<h3>Unlimited</h3>
+<p>$129</p>
+<p>MP3 + WAV + Stems</p>
+<p>Unlimited Streams</p>
+<p>Full Monetization</p>
+</div>
+
+</div>
+
+</section>
+
 <section id="videos">
 
 <h2>🎬 Videos</h2>
 
-<div class="video-container">
+<div class="videos">
 
 <iframe width="360" height="215"
 src="https://www.youtube.com/embed/YOURVIDEOID"
@@ -234,38 +285,43 @@ allowfullscreen></iframe>
 <div class="about">
 
 <p>
-Colby Dedon is the creator behind <strong>Dopest Class</strong>, crafting
-high energy, modern production designed for artists who want records that hit
-hard and stand out.
+
+Colby Dedon is the producer behind <strong>Dopest Class</strong>,
+crafting modern trap, drill, and cinematic hip-hop production.
+
 </p>
 
 <p>
-From dark trap to melodic drill and cinematic soundscapes,
-Dopest Class delivers powerful beats built for real artists and real records.
+
+Each beat is designed with industry-level sound design,
+hard-hitting drums, and powerful melodies to give artists
+the sound they need to create their next hit record.
+
 </p>
 
 <p>
-Every beat is produced, mixed, and designed with precision to give artists
-the sound they need to create their next hit.
+
+Dopest Class focuses on high energy instrumentals,
+unique sonic textures, and professional mixing to
+deliver beats that stand out in today's music landscape.
+
 </p>
 
 </div>
 
 </section>
 
-<section id="social">
+<section id="contact">
 
 <h2>🌐 Connect</h2>
 
 <div class="social">
 
-<a href="https://instagram.com/YOURNAME">Instagram</a>
+<a href="https://instagram.com/dopestclass">Instagram</a>
 
 <a href="https://youtube.com/YOURCHANNEL">YouTube</a>
 
-<a href="https://twitter.com/YOURNAME">Twitter</a>
-
-<a href="mailto:youremail@email.com">Email</a>
+<a href="mailto:colby.wav@gmail.com">Email</a>
 
 </div>
 
@@ -278,5 +334,4 @@ the sound they need to create their next hit.
 </footer>
 
 </body>
-
 </html>
