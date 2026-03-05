@@ -1,175 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dopest Class | Colby Dedon</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DOPEST CLASS — Colby Dedon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/wavesurfer.js"></script>
 
 <style>
-/* GLOBAL */
-* { box-sizing: border-box; margin:0; padding:0; }
-body { font-family: 'Space Grotesk', sans-serif; background:#0a0a0a; color:#eaeaea; overflow-x:hidden; }
-a { text-decoration:none; }
 
-/* BACKGROUND ANIMATION */
-body::before {
-  content:"";
-  position:fixed; top:0; left:0;
-  width:100%; height:100%;
-  background: radial-gradient(circle at 50% 50%, #7b61ff 0%, #0a0a0a 70%);
-  animation: backgroundMove 20s linear infinite;
-  z-index:-1;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Inter;
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
-@keyframes backgroundMove {
-  0%{transform:translate(0,0);}
-  50%{transform:translate(50px,50px);}
-  100%{transform:translate(0,0);}
+/* animated background */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:linear-gradient(120deg,#ff0066,#00e1ff,#7b61ff,#ff0066);
+background-size:400% 400%;
+animation:gradientMove 20s ease infinite;
+filter:blur(120px);
+opacity:.35;
 }
 
-/* HERO */
-.hero { text-align:center; padding:120px 20px; position:relative; z-index:1; }
-.hero h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size:50px;
-  letter-spacing:3px;
-  color:#fff;
-  text-shadow: 0 0 10px #7b61ff, 0 0 30px #ff3c97, 0 0 60px #7b61ff;
-  margin-bottom:20px;
-  animation: neonGlow 2s ease-in-out infinite alternate;
-}
-.hero p { font-size:20px; opacity:0.8; }
-
-/* NEON GLOW ANIMATION */
-@keyframes neonGlow {
-  0%{ text-shadow:0 0 10px #7b61ff,0 0 30px #ff3c97; }
-  100%{ text-shadow:0 0 20px #7b61ff,0 0 50px #ff3c97; }
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
-/* NAV */
-nav { background:rgba(0,0,0,0.7); backdrop-filter:blur(12px); padding:18px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.05); position:sticky; top:0; z-index:10; }
-nav a { margin:0 22px; color:#eaeaea; font-weight:600; transition:.3s; letter-spacing:1px; }
-nav a:hover { color:#7b61ff; }
+/* hero */
 
-/* SECTIONS */
-section { padding:80px 20px; text-align:center; }
-h2 { font-family:'Orbitron'; font-size:38px; letter-spacing:2px; margin-bottom:50px; color:#fff; text-shadow:0 0 15px #7b61ff; }
-
-/* BEAT GRID */
-.beats { display:flex; flex-wrap:wrap; justify-content:center; gap:35px; }
-.beat {
-  width:300px;
-  background:rgba(20,20,20,0.5);
-  backdrop-filter:blur(15px);
-  border-radius:16px;
-  padding:25px;
-  border:1px solid rgba(255,255,255,0.05);
-  box-shadow:0 0 25px rgba(123,97,255,0.4);
-  transition:.4s;
+.hero{
+padding:140px 10%;
 }
-.beat:hover { transform:translateY(-10px); box-shadow:0 0 50px rgba(123,97,255,0.7); }
-.beat h3 { font-family:'Orbitron'; font-size:22px; margin-bottom:10px; }
-audio { width:100%; margin-top:12px; }
-button { margin-top:12px; background:#7b61ff; border:none; padding:12px 20px; color:#fff; font-weight:700; border-radius:8px; cursor:pointer; transition:.3s; }
-button:hover { background:#ff3c97; box-shadow:0 0 12px #7b61ff; }
 
-/* LICENSE CARDS */
-.licenses { display:flex; flex-wrap:wrap; justify-content:center; gap:35px; }
-.license { width:250px; background:rgba(18,18,18,0.6); border-radius:14px; padding:28px; border:1px solid rgba(255,255,255,0.05); transition:.3s; }
-.license:hover { box-shadow:0 0 40px rgba(123,97,255,0.5); }
-.license h3 { font-family:'Orbitron'; font-size:22px; color:#7b61ff; margin-bottom:12px; }
+.hero h1{
+font-size:80px;
+font-weight:800;
+line-height:1.05;
+letter-spacing:-2px;
+max-width:900px;
+}
 
-/* VIDEO GRID */
-.videos { display:flex; flex-wrap:wrap; justify-content:center; gap:35px; }
+.hero p{
+margin-top:20px;
+opacity:.6;
+font-size:20px;
+}
 
-/* ABOUT */
-.about { max-width:720px; margin:auto; line-height:1.8; font-size:18px; opacity:.9; }
+/* nav */
 
-/* SOCIAL */
-.social a { margin:0 15px; color:#eaeaea; font-size:18px; font-weight:600; transition:.3s; }
-.social a:hover { color:#ff3c97; }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px 10%;
+position:sticky;
+top:0;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(20px);
+}
 
-/* FOOTER */
-footer { margin-top:80px; padding:40px; background:#0b0b0b; text-align:center; font-size:14px; opacity:.6; }
+nav a{
+margin-left:30px;
+color:white;
+opacity:.7;
+font-weight:600;
+}
+
+nav a:hover{
+opacity:1;
+}
+
+/* section */
+
+section{
+padding:120px 10%;
+}
+
+h2{
+font-size:48px;
+margin-bottom:60px;
+}
+
+/* beat card */
+
+.beat{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+margin-bottom:40px;
+backdrop-filter:blur(15px);
+}
+
+.beatTitle{
+font-size:24px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.wave{
+height:90px;
+}
+
+.controls{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:20px;
+}
+
+.play{
+background:white;
+color:black;
+border:none;
+padding:10px 18px;
+border-radius:30px;
+font-weight:700;
+cursor:pointer;
+}
+
+.buy{
+background:transparent;
+border:1px solid white;
+color:white;
+padding:10px 18px;
+border-radius:30px;
+}
+
+/* licenses */
+
+.licenses{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.license{
+flex:1;
+min-width:220px;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.06);
+}
+
+.price{
+font-size:40px;
+margin:15px 0;
+}
+
+/* videos */
+
+.videos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+gap:40px;
+}
+
+iframe{
+width:100%;
+height:260px;
+border:none;
+border-radius:15px;
+}
+
+/* about */
+
+.about{
+max-width:700px;
+font-size:18px;
+line-height:1.7;
+opacity:.8;
+}
+
+/* social */
+
+.social a{
+margin-right:25px;
+font-size:18px;
+}
+
+footer{
+padding:80px 10%;
+opacity:.5;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<div class="hero">
-<h1>THE DOPEST DROPS FOR THE MUSIC CRAFTED BY COLBY DEDON</h1>
-<p>Dopest Class Production</p>
-</div>
+<div class="bg"></div>
 
 <nav>
+
+<div><strong>DOPEST CLASS</strong></div>
+
+<div>
 <a href="#beats">Beats</a>
 <a href="#licenses">Licenses</a>
 <a href="#videos">Videos</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
+</div>
+
 </nav>
 
+<div class="hero">
+
+<h1>
+THE DOPEST DROPS FOR THE MUSIC  
+CRAFTED BY COLBY DEDON
+</h1>
+
+<p>Dopest Class Production</p>
+
+</div>
+
 <section id="beats">
+
 <h2>Beat Store</h2>
-<div class="beats">
+
 <div class="beat">
-<h3>VEGAS</h3>
-<audio controls>
-<source src="VEGAS-90-Cm.mp3">
-</audio>
-<p>90 BPM | C# Minor</p>
-<button>Buy License</button>
+
+<div class="beatTitle">VEGAS</div>
+
+<div id="wave1" class="wave"></div>
+
+<div class="controls">
+<button class="play" onclick="wave1.playPause()">PLAY</button>
+<button class="buy">BUY LICENSE</button>
+</div>
+
 </div>
 
 <div class="beat">
-<h3>Drill Beat</h3>
-<audio controls>
-<source src="beats/drill1.mp3">
-</audio>
-<p>150 BPM | D Minor</p>
-<button>Buy License</button>
+
+<div class="beatTitle">DRILL BEAT</div>
+
+<div id="wave2" class="wave"></div>
+
+<div class="controls">
+<button class="play" onclick="wave2.playPause()">PLAY</button>
+<button class="buy">BUY LICENSE</button>
 </div>
+
 </div>
+
 </section>
 
 <section id="licenses">
-<h2>License Options</h2>
+
+<h2>Licenses</h2>
+
 <div class="licenses">
-<div class="license"><h3>Basic</h3><p>$29</p><p>MP3 Lease</p></div>
-<div class="license"><h3>WAV</h3><p>$59</p><p>MP3 + WAV</p></div>
-<div class="license"><h3>Unlimited</h3><p>$129</p><p>MP3 + WAV + Stems</p></div>
+
+<div class="license">
+<h3>BASIC</h3>
+<div class="price">$29</div>
+MP3 lease<br>
+50k streams
 </div>
+
+<div class="license">
+<h3>WAV</h3>
+<div class="price">$59</div>
+MP3 + WAV<br>
+150k streams
+</div>
+
+<div class="license">
+<h3>UNLIMITED</h3>
+<div class="price">$129</div>
+MP3 + WAV + stems<br>
+unlimited streams
+</div>
+
+</div>
+
 </section>
 
 <section id="videos">
+
 <h2>Videos</h2>
+
 <div class="videos">
-<iframe width="360" height="215" src="https://www.youtube.com/embed/YOURVIDEOID" frameborder="0" allowfullscreen></iframe>
-<iframe width="360" height="215" src="https://www.youtube.com/embed/YOURVIDEOID" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="https://www.youtube.com/embed/YOURVIDEOID"></iframe>
+
+<iframe src="https://www.youtube.com/embed/YOURVIDEOID"></iframe>
+
 </div>
+
 </section>
 
 <section id="about">
+
 <h2>About The Artist</h2>
+
 <div class="about">
-<p>Colby Dedon is the producer behind Dopest Class, crafting cinematic trap, drill, and modern hip-hop productions.</p>
-<p>Each instrumental blends heavy rhythm architecture with atmospheric melody structures designed for artists building records with longevity and identity.</p>
-<p>Dopest Class focuses on sonic depth, impact, and modern musical aesthetics.</p>
+
+Colby Dedon is the producer behind Dopest Class, creating modern trap, drill, and cinematic hip-hop production.
+
+Each beat blends heavy rhythm architecture with atmospheric melodies designed for artists creating their next record.
+
+Dopest Class focuses on depth, impact, and sonic identity.
+
 </div>
+
 </section>
 
 <section id="contact">
+
 <h2>Connect</h2>
+
 <div class="social">
+
 <a href="https://instagram.com/dopestclass">Instagram</a>
 <a href="https://youtube.com/YOURCHANNEL">YouTube</a>
 <a href="mailto:colby.wav@gmail.com">Email</a>
+
 </div>
+
 </section>
 
-<footer>© 2026 Dopest Class | Produced by Colby Dedon</footer>
+<footer>
+
+© 2026 Dopest Class — Produced by Colby Dedon
+
+</footer>
+
+<script>
+
+var wave1 = WaveSurfer.create({
+container:'#wave1',
+waveColor:'#666',
+progressColor:'#ffffff',
+height:80
+})
+
+wave1.load('VEGAS-90-Cm.mp3')
+
+var wave2 = WaveSurfer.create({
+container:'#wave2',
+waveColor:'#666',
+progressColor:'#ffffff',
+height:80
+})
+
+wave2.load('beats/drill1.mp3')
+
+</script>
 
 </body>
 </html>
